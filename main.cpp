@@ -121,9 +121,12 @@ int main() {
                             break;
                         case 'R': mystack.push(memory);
                             break;
-                        case '(':
+                        case '(':{
                             cout << commandline[1] << endl;
                             int top=stoi(commandline.substr(1,commandline.find('/')));
+                            int bottom=stoi(commandline.substr(commandline.find('/')+1,commandline.length()-1));
+                            mystack.push(fraction(top,bottom));
+                        }
                             break;
                         default: cout << "Malformed Number" << endl;
                             break;
